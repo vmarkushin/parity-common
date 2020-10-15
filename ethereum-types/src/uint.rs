@@ -31,7 +31,7 @@ pub use primitive_types::{U128, U256, U512};
 mod tests {
 	use super::{U256, U512};
 	use serde_json as ser;
-	use std::u64::MAX;
+	use core::u64::MAX;
 
 	macro_rules! test_serialize {
 		($name: ident, $test_name: ident) => {

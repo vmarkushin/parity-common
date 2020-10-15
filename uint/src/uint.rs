@@ -1568,7 +1568,8 @@ macro_rules! impl_std_for_uint {
 
 			fn from_str(value: &str) -> $crate::core_::result::Result<$name, Self::Err> {
 				use $crate::rustc_hex::FromHex;
-				let bytes: Vec<u8> = match value.len() % 2 == 0 {
+				use alloc::borrow::ToOwned;
+				let bytes: alloc::vec::Vec<u8> = match value.len() % 2 == 0 {
 					true => value.from_hex()?,
 					false => ("0".to_owned() + value).from_hex()?,
 				};

@@ -1,6 +1,6 @@
 [package]
 name = "ethereum-types"
-version = "0.9.2"
+version = "0.9.3"
 authors = ["Parity Technologies <admin@parity.io>"]
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/paritytech/parity-common"
@@ -20,7 +20,7 @@ impl-codec = { version = "0.4.1", path = "../primitive-types/impls/codec", defau
 serde_json = "1.0.41"
 
 [features]
-default = ["std", "serialize"]
+default = ["serialize"]
 std = ["uint-crate/std", "fixed-hash/std", "ethbloom/std", "primitive-types/std"]
 serialize = ["impl-serde", "primitive-types/serde", "ethbloom/serialize"]
 arbitrary = ["ethbloom/arbitrary", "fixed-hash/arbitrary", "uint-crate/arbitrary"]

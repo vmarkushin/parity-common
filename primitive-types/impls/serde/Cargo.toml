@@ -1,6 +1,6 @@
 [package]
 name = "impl-serde"
-version = "0.3.1"
+version = "0.3.2"
 authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -12,7 +12,7 @@ default = ["std"]
 std = ["serde/std"]
 
 [dependencies]
-serde = { version = "1.0.101", default-features = false, features = ["alloc"] }
+serde = { version = "1.0", git = "https://github.com/vmarkushin/serde.git", features = ["alloc"], package = "serde", default-features = false }
 
 [dev-dependencies]
 criterion = "0.3.0"

@@ -25,3 +25,6 @@ members = [
 	"ethbloom",
 	"parity-util-mem/derive"
 ]
+
+#[patch.crates-io]
+#serde = { default-features = false, git = "https://github.com/vmarkushin/serde.git", features = ["alloc"], package = "serde" }

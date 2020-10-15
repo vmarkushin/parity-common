@@ -75,7 +75,7 @@ mod serde {
 	impl_fixed_hash_serde!(H512, 64);
 }
 
-#[cfg(feature = "impl-codec")]
+#[cfg(feature = "codec")]
 mod codec {
 	use super::*;
 	use impl_codec::{impl_fixed_hash_codec, impl_uint_codec};

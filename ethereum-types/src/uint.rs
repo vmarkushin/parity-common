@@ -9,7 +9,7 @@
 #[cfg(feature = "codec")]
 use impl_codec::impl_uint_codec;
 use impl_rlp::impl_uint_rlp;
-#[cfg(feature = "serialize")]
+#[cfg(feature = "impl-serde")]
 use impl_serde::impl_uint_serde;
 use uint_crate::*;
 
@@ -20,7 +20,7 @@ construct_uint! {
 	pub struct U64(1);
 }
 impl_uint_rlp!(U64, 1);
-#[cfg(feature = "serialize")]
+#[cfg(feature = "impl-serde")]
 impl_uint_serde!(U64, 1);
 #[cfg(feature = "codec")]
 impl_uint_codec!(U64, 1);
@@ -82,7 +82,7 @@ mod tests {
 
 	#[test]
 	fn fixed_arrays_roundtrip() {
-		let raw: U256 = "7094875209347850239487502394881".into();
+		let raw: U256 = 7094875209347850239487502394881_u128.into();
 		let array: [u8; 32] = raw.into();
 		let new_raw = array.into();
 
